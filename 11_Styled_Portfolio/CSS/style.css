@@ -9,28 +9,123 @@
     font-style: normal;
 }
 
+:root
+{
+    --primary-color:wheat;
+    --section-background:rgb(210, 190, 153);
+    --border:2px solid rgb(55, 55, 55);
+    --anchor-color: rgb(76, 71, 65);
+    --hover-anchor-color: white;
+}
+
+.content:has(#theme:checked)
+{
+    --primary-color:rgb(45, 45, 45);
+    --section-background:rgb(18, 18, 18);
+    --border:2px solid rgb(177, 177, 177);
+    --anchor-color: rgb(252, 113, 88);
+    --hover-anchor-color: rgb(199, 45, 6);
+    color: white;
+
+    
+}
+
+
+
+/* *:not(html){
+    margin: 0px 0px 0px 0px;
+    padding: 5px;
+    
+} */
+
 *{
-    margin: 0px 0px 0px 5px;
-    padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+  
 }
 
 body
 {
+    
+    background-color: var(--primary-color);
+    
+    
+}
+
+.content
+{
+    margin: 0px;
+    padding: 0px 0px 0px 0px; 
+
     font-family: 'Poppins' ;
     font-weight: 500;
+    line-height: 1.5;
+    background-color: var(--primary-color,white);
+
+
+}
+
+header
+{
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+     width: 100%;
+    border: var(--border) ;
+    background-color: var(--section-background);
+}
+
+main
+{
+    padding: 10px;
+    
 }
 
 main > section
 {
     margin: 20px 0px 20px 0px;
+    padding: 10px;
+    background-color: var(--section-background,white);
+    border: var(--border) ;
+    border-radius: 5px;
 }
+
+
 
 h3~ul
 {
     margin-left: 30px;
+
 }
 
+section>ul{
+    padding: 15px;
+}
 
+.project
+{
+    margin-top: 10px;
+}
+
+.project>p:first-child
+{
+    font-weight: bold;
+}
+
+address
+{
+    max-width: 100vw;
+ display: grid; 
+ grid-template-columns: auto 1fr ; 
+ grid-template-rows: auto 1fr; 
+}
+
+address>p:nth-child(3)
+{
+    grid-column: span 2;
+    text-align: center;
+}
 
 h1
 {
@@ -48,5 +143,42 @@ h3
     font-weight: 600;
 }
 
+a
+{
+    text-decoration: none;
+    color: var(--anchor-color);
+    font-weight: bold;
 
+}
 
+a:hover{
+    color: var(--hover-anchor-color,rgb(255, 255, 255));
+}
+
+.theme
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#toggle-theme>input[type="checkbox"]
+{
+    padding: 5px;
+    appearance: none;
+    background-color:white ;
+    border: var(--border);
+    border-radius: 30px;
+    cursor:pointer;
+
+}
+
+#toggle-theme>input[type="checkbox"]:checked
+{
+    background-color: black;
+    border: 2px solid white;
+}
+
+footer{
+    padding: 10px;
+}
