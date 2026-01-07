@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../FONTS/Poppins/Poppins-Black.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../FONTS/Poppins/Poppins-Light.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+:root
+{
+    --background-color:rgb(33,33,33);
+    --background-color-hover:rgb(196, 196, 196);
+    --color-hover:rgb(73, 73, 73);
+    --flex-direction: row;
+    --felx-alignment-horizontal:space-around;
+    --flex-alignment-vertical:centre;
+    --width-ul:auto;
+    --display-ul:flex;
+    --padding-li:5px;
+}
+
+@media(max-width: 480px){
+    :root{
+        
+        --flex-direction:column;
+        --felx-alignment-horizontal:centre;
+        --flex-alignment-vertical:centre;
+        --width-ul:20%;
+        --display-ul:block;
+         --padding-li:0px;
+    }
+}
+@media(max-width: 768px){
+    :root{
+        --flex-direction: column ;
+        --felx-alignment-horizontal:center;
+        --flex-alignment-vertical:center;
+        --width-ul:20%;
+        --display-ul:block;
+         --padding-li:0px;
+    }
+}
+/*@media(max-width: 1024px){}
+@media(max-width: 1025px){} */
+
+.container
+{
+    background-color: red;
+    color: white;
+    font-family: "Poppins" , Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+nav
+{
+    padding: 0px;
+    display: flex;
+    flex-direction: var(--flex-direction);
+    flex-wrap: wrap;
+    justify-content: var(--felx-alignment-horizontal);
+    align-items: var(--flex-alignment-vertical);
+    background-color: var(--background-color);
+
+}
+
+h1
+{
+    font-weight: 800;
+}
+
+h1>span
+{
+    color: rgb(255, 174, 0);
+}
+
+nav >ul
+{
+    display: var(--display-ul);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+    width: var(--width-ul);
+    list-style: none;
+    padding: 0px;
+
+    text-align: center;
+}
+
+nav ul>li
+{
+    border: 2px solid transparent ;
+    padding: var(--padding-li);
+}
+nav ul>li:hover
+{
+    background-color: var(--background-color-hover);
+    color: var(--color-hover);
+    border: 2px solid rgb(255, 174, 0);
+    border-radius: 5px;
+
+}
+
+nav a
+{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.searchbar
+{
+    margin: 10px;
+}
+.searchbar input
+{
+    margin: 0px;
+    padding: 0px;
+
+    width: 200px;
+    height: 30px;
+}
+
+.searchbar button
+{
+    margin-left: 0px;
+    height: 30px;
+}
+
+
